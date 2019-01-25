@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <style>
+      #pTag {
+        color: red;
+        font-size: 30px;
+      }
+
+      .big {
+        font-size: 100px;
+      }
+
+      #shiaImg {
+        width: 100px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+      }
+
+      h1 {
+        font-weight: 100;
+      }
+
+      #gallery {
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        display: flex;
+        height: 700px;
+        width: 1000px;
+      }
+
+      #gallery img {
+        scroll-snap-align: center;
+      }
+
+      #container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <script>
+      window.onmousemove = function (event) {
+        const x = event.x;
+        const y = event.y;
+        const shiaImg = document.getElementById("shiaImg");
+        shiaImg.style.top = (y+10) + "px";
+        shiaImg.style.left = (x+10) + "px";
+      }
+
+
+      function getImgNumber() {
+        return Math.floor(Math.random() * 79);
+      }
+
+      function loadCage() {
+        let img = "";
+        for (let i = 0; i < 10; i++) {
+          const number = getImgNumber();
+          const cageUrl = `http://cageme.herokuapp.com/specific/${number}`;
+          img += `<img src="${cageUrl}" />`;
+        }
+        console.log(img);
+        const gallery = document.getElementById("gallery");
+        gallery.innerHTML = img;
+      }
+
+
+    </script>
+  </head>
+  <body>
+    <p class="big" id="pTag" > Tyler </p>
+    <p class="big" > Tracy </p>
+    <button onclick="loadCage()"> Click Me </button>
+    <img src="imgs/shia.png" id="shiaImg"/>
+    <div id="container">
+      <div id="gallery">  </div>
+    </div>
+
+  </body>
+</html>
