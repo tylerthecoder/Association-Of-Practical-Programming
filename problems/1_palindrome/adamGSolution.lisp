@@ -21,8 +21,8 @@
                             
 (defvar *tests*) ;define global variables
 (defvar *solns*)
-(setf *tests* (read-strings "C:/GitHub/Association-Of-Practical-Programming/problems/1_palindrome/input.txt")) ; read files
-(setf *solns* (mapcar #'convert-boolean (read-strings "C:/GitHub/Association-Of-Practical-Programming/problems/1_palindrome/output.txt")))
+(setf *tests* (read-strings "%PATH_TO_GIT_REPO%/Association-Of-Practical-Programming/problems/1_palindrome/input.txt")) ; read files
+(setf *solns* (mapcar #'convert-boolean (read-strings "%PATH_TO_GIT_REPO%/Association-Of-Practical-Programming/problems/1_palindrome/output.txt")))
 
 
 (format t "~{~a ~}" (mapcar #'test-checker *tests* *solns*)) ;output results
