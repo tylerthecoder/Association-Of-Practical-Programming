@@ -1,0 +1,11 @@
+<div id="container">
+  <div>
+      <p> Select Cage Image</p>
+      <button
+        (click)="loadCageUrls()"
+      > Generate CAGE! </button>
+      <div id="gallery" [style.height]="height">
+        <img *ngFor="let cageSrc of cageUrls" [src]="cageSrc" />
+      </div>
+  </div>
+</div>
