@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { filter, take } from 'rxjs/operators';
-import { concat } from 'rxjs/observable/concat';
 interface IMessage {
   board: string;
   text: string;
