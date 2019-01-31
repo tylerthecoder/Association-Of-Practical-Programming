@@ -1,0 +1,8 @@
+#root {
+  border: black solid 2px;
+  display: inline-block;
+  max-width: 500px;
+  .message {
+    border-bottom: 1px black dotted;
+  }
+}

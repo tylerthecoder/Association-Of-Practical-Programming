@@ -1,0 +1,16 @@
+<div id="root">
+  <div id="messages">
+    <div *ngFor="let message of messages" class="message">
+      {{ message }}
+    </div>
+  </div>
+  <input
+    type="text"
+    [(ngModel)]="text"
+  />
+  <button
+    (click)="sendMessage()"
+  >
+    Send Message
+  </button>
+</div>
