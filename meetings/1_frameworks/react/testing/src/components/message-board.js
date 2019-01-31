@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import openSocket from 'socket.io-client';
 
+const messageStyle = {
+  fontSize: "30px",
+  borderBottom: "dotted 2px white",
+  padding: "3px",
+  margin: "0px",
+}
+
+const boardStyle = {
+  border: "4px solid white",
+  display: "inline-block",
+  margin: "10px"
+}
+
 class MessageBoard extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +32,6 @@ class MessageBoard extends Component {
     const { board } = this.props;
     this.socket.emit('getAllMessages', board);
     this.socket.on('allMessages', (data) => {
-      console.log(data);
       const boardMess = data
         .filter(m => m.board === board)
         .map(m => m.text);
@@ -36,9 +48,7 @@ class MessageBoard extends Component {
     const { board } = this.props;
     const { messages } = this.state;
     if (data.board === board) {
-      console.log("Made")
       messages.push(data.text);
-      console.log(messages);
       this.setState({
         messages,
       })
@@ -62,10 +72,11 @@ class MessageBoard extends Component {
   render() {
     const { messages, text } = this.state;
     return (
-      <h1>
-        <p> Hello </p>
+      <div
+        style={boardStyle}
+      >
         { messages.map(message => (
-          <p>
+          <p style={messageStyle}>
             { message }
           </p>
         )) }
@@ -79,7 +90,7 @@ class MessageBoard extends Component {
         >
           Send Message
         </button>
-      </h1>
+      </div>
     )
   }
 }

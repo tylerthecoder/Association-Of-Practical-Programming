@@ -10,6 +10,9 @@ class App extends Component {
           <MessageBoard
             board="main"
           ></MessageBoard>
+          <MessageBoard
+            board="cats"
+        ></MessageBoard>
         </header>
       </div>
     );
