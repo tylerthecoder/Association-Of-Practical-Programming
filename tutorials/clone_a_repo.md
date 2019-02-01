@@ -10,4 +10,10 @@ After you do this you should be able to go to your command prompt (cmd for windo
 
 Before we clone the repository, you should consider where on your computer you are going to put the code. You will normally be navigating to this code from the command line so somewhere simple is nice. I just have a folder on my root called Coding and whenever I clone a repository, I put it there. That way all of my code is in one place that is easy to find.
 
-Now to actually clone the repository, you are going to need to go to the repository's website and click "Clone or download" and make sure it says "Clone with https" then copy that link. Navigate to where you want to put the code on your terminal and then type `git clone <your url>` (Replace \<your url\> with the url you copied). Then it should all be done! You can change directories into the
+Now to actually clone the repository, you are going to need to go to the repository's website and click "Clone or download" and make sure it says "Clone with https" then copy that link. Navigate to where you want to put the code on your terminal and then type `git clone <your url>` (Replace \<your url\> with the url you copied). Then it should all be done! You can change directories into the folder and see the code!
+
+Here are some other tutorials that you can go off if you want extra help:
+
+[Install Git](https://www.atlassian.com/git/tutorials/install-git)
+
+[Cloning a repository](https://help.github.com/articles/cloning-a-repository/)
